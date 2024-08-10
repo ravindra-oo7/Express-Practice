@@ -6,9 +6,6 @@ var products =  require('./routes/products');
 var reviews =  require('./routes/reviews');
 var users =  require('./routes/users');
 
-
-
-
 var app = express();
 
 app.use('/items',items);
@@ -17,10 +14,7 @@ app.use('/products',products);
 app.use('/reviews',reviews);
 app.use('/users',users);
 
-
-
-
-
+/* 
 app.get("/getUsers",(req,res)=>{
 
     var users = [
@@ -70,6 +64,8 @@ app.delete("/deleteUser",(req,res)=>{
 
     res.send("User Deleted successfully");
 });
+ */
+
 
 app.listen(3000);
 
