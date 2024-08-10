@@ -2,6 +2,28 @@ var express = require("express");
 
 var router = express.Router();
 
+//Middleware
+router.use('/',(req,res,next)=>{
+
+    req.headers["content-type"] = 'application/json';
+    console.log("API call Received");
+    next();
+});
+
+router.get('/',(req,res,next)=>{
+    
+    res.send("Headers Recevied"+ req.headers["content-type"]);
+    res.send("Get Request for Users");
+    next();
+});
+
+router.use('/',(req,res)=>{
+    
+console.log("API Call Ended");
+});
+
+
+
 // "/users"
 router.get('/',(req,res)=>{
 
